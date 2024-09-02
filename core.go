@@ -19,6 +19,12 @@ type Point struct {
 	*geojson.Geometry
 }
 
+func Parse(latitude, longitude float64) Point {
+	return Point{
+		Geometry: geojson.NewPointGeometry([]float64{longitude, latitude}),
+	}
+}
+
 func (p Point) StraightLineDistance(tp Point) float64 {
 	if p.Geometry == nil || tp.Geometry == nil {
 		return 0
