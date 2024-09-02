@@ -19,7 +19,7 @@ type Point struct {
 	*geojson.Geometry
 }
 
-func (p Point) StraightLineDistance(tp *Point) float64 {
+func (p Point) StraightLineDistance(tp Point) float64 {
 	if p.Geometry == nil || tp.Geometry == nil {
 		return 0
 	}
@@ -35,7 +35,7 @@ func (p Point) StraightLineDistance(tp *Point) float64 {
 	return distanceKm
 }
 
-func (p Point) Distance(tp *Point) float64 {
+func (p Point) Distance(tp Point) float64 {
 	if p.Geometry == nil || tp.Geometry == nil {
 		return 0
 	}
