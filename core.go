@@ -19,7 +19,7 @@ type Point struct {
 	*geojson.Geometry
 }
 
-func Parse(latitude, longitude float64) Point {
+func Parse(longitude, latitude float64) Point {
 	return Point{
 		Geometry: geojson.NewPointGeometry([]float64{longitude, latitude}),
 	}
